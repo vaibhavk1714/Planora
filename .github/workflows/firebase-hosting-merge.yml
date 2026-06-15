@@ -8,7 +8,6 @@ jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
 
-    # Environment variables available to the build
     env:
       NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
       NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN }}
@@ -53,3 +52,5 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_AI_TRIP_PLANNER_2241E }}
           channelId: live
           projectId: ${{ secrets.FIREBASE_PROJECT_ID }}
+          # This fixes the cleanup policy error
+          firebaseHostingDeployArgs: --force
