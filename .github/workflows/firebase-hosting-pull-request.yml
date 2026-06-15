@@ -18,4 +18,4 @@ jobs:
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_AI_TRIP_PLANNER_2241E }}
-          projectId: ai-trip-planner-2241e
+          projectId: ${{ secrets.FIREBASE_PROJECT_ID }}
