@@ -42,18 +42,6 @@ jobs:
             - name: Setup gcloud
               uses: google-github-actions/setup-gcloud@v2
 
-            # Idempotent; safe to run every time. If your SA can't enable services,
-            # enable them once in the console instead.
-            - name: Enable required APIs
-              run: |
-                  gcloud config set project ${{ secrets.FIREBASE_PROJECT_ID }}
-                  gcloud services enable \
-                    cloudfunctions.googleapis.com \
-                    run.googleapis.com \
-                    cloudbuild.googleapis.com \
-                    artifactregistry.googleapis.com \
-                    secretmanager.googleapis.com
-
             - name: Deploy to Firebase Hosting
               uses: FirebaseExtended/action-hosting-deploy@v0
               with:
