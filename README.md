@@ -202,4 +202,4 @@ and ensure the Maps JavaScript API is enabled in Google Cloud.
 
 ## License
 
-MIT
+MIT 
